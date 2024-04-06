@@ -43,6 +43,10 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
+      - name: Debug files in directory
+        run: |
+          ls -R ./bankingsample/BankingSystem-master/.sonarqube
+
       - name: Begin SonarQube analysis
         shell: powershell
         run: |
