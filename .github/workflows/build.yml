@@ -45,7 +45,7 @@ jobs:
 
       - name: Debug files in directory
         run: |
-          ls -R ./bankingsample/BankingSystem-master/.sonarqube
+          ls -R .\.sonarqube
 
       - name: Begin SonarQube analysis
         shell: powershell
