@@ -50,7 +50,7 @@ jobs:
       - name: Begin SonarQube analysis
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Banking-software" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:"C:\bankingsample\BankingSystem-master\.sonarqube\conf\SonarQubeAnalysisConfig.xml"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Banking-software" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:"C:\bankingsample\BankingSystem-master\.sonarcube\conf\SonarQubeAnalysisConfig.xml"
 
       - name: Build
         run: dotnet build
