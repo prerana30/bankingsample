@@ -46,6 +46,6 @@ jobs:
       - name: Build and analyze
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Preranaproject" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:C:\bankingsample\BankingSystem-master\.sonarqube\conf\SonarQubeAnalysisConfig"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Preranaproject" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:"C:\bankingsample\BankingSystem-master\.sonarqube\conf\SonarQubeAnalysisConfig"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
