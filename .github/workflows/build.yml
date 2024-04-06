@@ -43,11 +43,14 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
-      - name: Build and analyze
+      - name: Begin SonarQube analysis
         shell: powershell
         run: |
-         .\.sonar\scanner\dotnet-sonarscanner begin /k:"Banking-software" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:"C:\bankingsample\BankingSystem-master\BankingSystem.API\.sonarqube\conf\SonarQubeAnalysisConfig.xml"
-          dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Banking-software" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /s:"C:\bankingsample\BankingSystem-master\.sonarqube\conf\SonarQubeAnalysisConfig.xml"
 
+      - name: Build
+        run: dotnet build
 
+      - name: End SonarQube analysis
+        shell: powershell
+        run: .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
