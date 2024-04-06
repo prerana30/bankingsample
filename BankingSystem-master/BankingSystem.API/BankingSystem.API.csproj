@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include=".sonarqube\conf\SonarQube.Analysis.xml" />
+    <Content Include=".sonarqube\conf\SonarQubeAnalysisConfig.xml" />
   </ItemGroup>
 
   <ItemGroup>
