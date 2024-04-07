@@ -21,7 +21,7 @@
 
 	<Property Name="sonar.host.url">http://localhost:9000</Property>
 
-	<Property Name="sonar.login">sqp_18ccda964b44809f4fbc841dd4ba8c62f56ec219</Property>
+	<Property Name="sonar.login">sqp_ccb59cabce36fcab23d29ad1f67c57e88aa554f4</Property>
 	<!-- <Property Name="sonar.password"></Property> -->
 
 
